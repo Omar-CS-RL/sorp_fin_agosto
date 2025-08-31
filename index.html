@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti, Mi Amor 💜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #8B5FBF 0%, #D8BFD8 50%, #E6E6FA 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .floating-sunflower {
+            position: absolute;
+            font-size: 2.5rem;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .floating-sunflower:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-sunflower:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+        .floating-sunflower:nth-child(3) { top: 60%; left: 5%; animation-delay: 4s; }
+        .floating-sunflower:nth-child(4) { bottom: 10%; right: 10%; animation-delay: 1s; }
+        .floating-sunflower:nth-child(5) { top: 70%; right: 20%; animation-delay: 3s; }
+        .floating-sunflower:nth-child(6) { bottom: 30%; left: 15%; animation-delay: 5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(5deg); }
+            50% { transform: translateY(-20px) rotate(-3deg); }
+            75% { transform: translateY(-10px) rotate(8deg); }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            border: 2px solid rgba(139, 95, 191, 0.3);
+            box-shadow: 0 15px 35px rgba(139, 95, 191, 0.2);
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .title {
+            font-size: 3.5rem;
+            color: #4A154B;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #6B46C1;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .sunflower-divider {
+            font-size: 2rem;
+            margin: 20px 0;
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .photo-frame {
+            width: 300px;
+            height: 300px;
+            margin: 30px auto;
+            border: 8px solid #8B5FBF;
+            border-radius: 20px;
+            background: linear-gradient(45deg, #DDA0DD, #E6E6FA);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(139, 95, 191, 0.3);
+            position: relative;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .photo-placeholder {
+            color: #6B46C1;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+        }
+
+        .message-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            border: 2px solid rgba(139, 95, 191, 0.2);
+            box-shadow: 0 15px 35px rgba(139, 95, 191, 0.15);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #4A154B;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .love-quote {
+            font-size: 1.5rem;
+            color: #8B5FBF;
+            font-style: italic;
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid #DDA0DD;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0 15px 15px 0;
+        }
+
+        .heart-animation {
+            display: inline-block;
+            animation: heartbeat 2s ease-in-out infinite;
+            font-size: 1.5rem;
+            color: #FF69B4;
+            margin: 0 10px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            50% { transform: scale(1); }
+        }
+
+        .apology-section {
+            background: linear-gradient(135deg, rgba(221, 160, 221, 0.3), rgba(230, 230, 250, 0.3));
+            border-radius: 20px;
+            padding: 35px;
+            margin: 30px 0;
+            border: 2px solid rgba(139, 95, 191, 0.3);
+            text-align: center;
+        }
+
+        .apology-title {
+            font-size: 2rem;
+            color: #6B46C1;
+            margin-bottom: 20px;
+        }
+
+        .apology-text {
+            font-size: 1.2rem;
+            color: #4A154B;
+            line-height: 1.6;
+        }
+
+        .sunflower-border {
+            border: 3px solid #FFD700;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.8rem;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(139, 95, 191, 0.1);
+            border-radius: 20px;
+            border: 2px solid rgba(139, 95, 191, 0.2);
+        }
+
+        .signature {
+            font-size: 1.4rem;
+            color: #6B46C1;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Efectos de hover */
+        .message-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(139, 95, 191, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title { font-size: 2.5rem; }
+            .container { padding: 15px; }
+            .photo-frame { width: 250px; height: 250px; }
+            .message-text { font-size: 1.1rem; }
+            .floating-sunflower { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Girasoles flotantes -->
+    <div class="floating-sunflower">🌻</div>
+    <div class="floating-sunflower">🌻</div>
+    <div class="floating-sunflower">🌻</div>
+    <div class="floating-sunflower">🌻</div>
+    <div class="floating-sunflower">🌻</div>
+    <div class="floating-sunflower">🌻</div>
+
+    <div class="container">
+        <!-- Encabezado principal -->
+        <div class="header">
+            <h1 class="title">Para Ti, Mi Amor</h1>
+            <p class="subtitle">❤️❤️Una página especial para una persona especial, te amo mucho Gabi 🐁🐀</p>
+            <div class="sunflower-divider">🌻</div>
+        </div>
+
+        <!-- Marco para foto -->
+        <div class="photo-frame">
+            <img src="foto_juntos.jpg" alt="Foto juntos" style="width:150px; height:auto;">
+        </div>
+
+
+
+        <!-- Mensaje principal -->
+        <div class="message-card">
+            <p class="message-text">
+                Cada día a tu lado es un día lleno de felicidad, haces mis días más bonitos
+                <span class="heart-animation">💜</span>
+                Tu sonrisa ilumina mis días más oscuros, y tu amor me da la fuerza 
+                para ser mejor persona cada día.
+            </p>
+        </div>
+
+        <!-- Sección de disculpas -->
+        <div class="apology-section">
+            <h2 class="apology-title">Mi Corazón Te Pide Perdón</h2>
+            <p class="apology-text">
+                Sé que cometí un grave error y que mis acciones te lastimaron. 
+                No hay excusas para ello, y quiero que sepas que me duele 
+                bastante haberte hecho daño, tu perdón significaría 
+                el mundo para mí, y prometo esforzarme cada día para ser 
+                el hombre que mereces. Espero que podamos seguir juntos si me lo permites mi amor uwu.
+                <span class="heart-animation">💜</span>
+            </p>
+        </div>
+
+        <!-- Cita de amor -->
+        <div class="love-quote">
+            "Así como el girasol sigue al sol, mi corazón te sigue a ti."
+        </div>
+
+        <!-- Otra tarjeta de mensaje -->
+        <div class="message-card">
+            <p class="message-text">
+                Eres mi luz en un mundo lleno de oscuridad, mi razón para 
+                sonreír cada mañana y mi último pensamiento cada noche antes de irme a dormir 
+                <span class="heart-animation">💜</span>
+                Gracias por ser tú, por tu paciencia, tu amor tan sincero y la felicidad que me brindas.
+            </p>
+        </div>
+
+        <!-- Borde decorativo con girasoles -->
+        <div class="sunflower-border">
+            🌻 Con todo mi amor y mi arrepentimiento sincero 🌻
+        </div>
+
+        <!-- Marco para otra foto (opcional) -->
+        <div class="photo-frame">
+            <img src="foto_gabi_gorrito.jpg" alt="Foto de mi amorcito" style="width:150px; height:auto;">
+        </div>
+
+        <!-- Pie de página -->
+        <div class="footer">
+            <p class="message-text">
+                No importa cuántos girasoles haya en el mundo, 
+                tú siempre serás la más hermosa para mí.
+            </p>
+            <div class="sunflower-divider">🌻💜🌻</div>
+            <p class="signature">
+                Con todo mi amor y mis ganas de seguir contigo,<br>
+                Tu enamorado que te ama infinitamente
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar más interactividad
+        document.addEventListener('DOMContentLoaded', function() {
+            // Crear corazones flotantes al hacer click
+            document.addEventListener('click', function(e) {
+                createHeart(e.clientX, e.clientY);
+            });
+
+            function createHeart(x, y) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💜';
+                heart.style.position = 'fixed';
+                heart.style.left = x + 'px';
+                heart.style.top = y + 'px';
+                heart.style.fontSize = '20px';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '1000';
+                heart.style.animation = 'floatUp 2s ease-out forwards';
+                
+                document.body.appendChild(heart);
+                
+                setTimeout(() => {
+                    document.body.removeChild(heart);
+                }, 2000);
+            }
+
+            // Agregar animación CSS para corazones
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes floatUp {
+                    0% { opacity: 1; transform: translateY(0) scale(1); }
+                    100% { opacity: 0; transform: translateY(-100px) scale(0.5); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
